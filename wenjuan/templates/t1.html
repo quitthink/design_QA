@@ -1,0 +1,79 @@
+
+{% load static %}
+<div class="t1" id="t1">
+    <div class="con_data">
+
+            <p>倒计时:&nbsp <span class="time" id="time1">30</span></p>
+
+
+
+    <div class="t_pic">
+
+        <img class="pic_t1" src="{% static 'css/img/t1.png' %}">
+    </div>
+
+        <br>
+                    <br>
+    </div>
+</div>
+
+<div id="re_2a">
+
+</div>
+
+<script language="javascript" type="text/javascript">
+    var i = 30;
+    var intervalid;
+    intervalid = setInterval("fun()", 1000);
+    function fun() {
+    if (i == 0) {
+
+        $.post("/",
+          {
+              page_id:'2a'
+
+
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+                {# 显示t1#}
+              $('#re_2a').html(data);
+
+
+          });
+{#        window.location.href = "../index.html";#}
+        clearInterval(intervalid);
+
+    }
+    document.getElementById("time1").innerHTML = i;
+    i--;
+    }
+</script>
+
+{#<script>#}
+{#    #}
+{#    $(document).ready(function(){#}
+{#      $("#NextButton2").click(function(){#}
+{#          $.post("/",#}
+{#          {#}
+{#            page_id:'3'#}
+{##}
+{#          },#}
+{#          function(data){#}
+{##}
+{#              $("#view").hide();#}
+{#              $("#t1s").hide();#}
+{#              $("#t1").hide();#}
+                {# 显示t1#}
+{#              $('#re_2a').html(data);#}
+{##}
+{##}
+{#          });#}
+{#        });#}
+{##}
+{#    });#}
+{#</script>#}

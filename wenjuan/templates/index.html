@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+ <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet">
+ <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+ <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+ <link href="{% static 'css/index.css' %}" rel="stylesheet">
+<body>
+
+<div class="head">
+
+
+</div>
+ <div class="content">
+        <div class="log_title">
+            <div id="logo">
+                <img  class="img" src="{% static 'css/img/logo.jpg' %}">
+            </div>
+        </div>
+     
+        {#        首页部分：#}
+        {% if page_id == 0 %}
+           {% include 't0.html' %}
+        {% endif %}
+        {#    题1的显示 #}
+        {% if page_id == 1 %}
+            {% include 't1s.html' %}
+        {% endif %}
+
+        {% if page_id == 2 %}
+            {% include 't1.html' %}
+
+        {% endif %}
+
+        {#    题2的显示 #}
+        {% if page_id == 3 %}
+            {% include 't2s.html' %}
+
+        {% endif %}
+
+        {% if page_id == 4 %}
+            {% include 't2.html' %}
+
+        {% endif %}
+
+        {#    题3的显示 #}
+        {% if page_id == 5 %}
+            {% include 't3s.html' %}
+
+        {% endif %}
+
+       {% if page_id == 6 %}
+            {% include 't3.html' %}
+
+        {% endif %}
+
+        {#    题4的显示 #}
+        {% if page_id == 7 %}
+            {% include 't4.html' %}
+
+        {% endif %}
+
+        {#    题5的显示 #}
+        {% if page_id == 8 %}
+           {% include 't5.html' %}
+
+        {% endif %}
+
+        {#    题6的显示 #}
+        {% if page_id == 9 %}
+           {% include 't6.html' %}
+
+        {% endif %}
+
+
+ </div>
+
+
+
+
+</body>
+</html>
+

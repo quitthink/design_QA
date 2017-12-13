@@ -1,0 +1,60 @@
+{% load static %}
+<div class="7a" id="7a">
+                <div class="con_data">
+
+                    <p>表格中共有多少个三角形？</p>
+
+                    <div class="result">
+                        <p><input class="input" placeholder="" type="text"></p>
+                    </div>
+
+                    <div id="line" class="line">
+
+                    </div>
+
+                    <div class="question">
+                        <p>按下>>进入下一题。</p>
+                    </div>
+
+                    <div class="Buttons" id="Buttons7a">
+
+                        <input id="NextButton7a" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+                    </div>
+                </div>
+
+</div>
+<div id="re_7">
+
+</div>
+
+
+
+<script>
+    $(document).ready(function(){
+      $("#NextButton7a").click(function(){
+          $.post("/",
+          {
+            page_id:'8'
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+              $("#t2").hide();
+              $("#4a").hide();
+              $("#t3s").hide();
+              $("#t3").hide();
+              $("#6a").hide();
+              $("#7a").hide();
+{#                显示t2#}
+              $('#re_7').html(data);
+
+          });
+        });
+
+    });
+</script>

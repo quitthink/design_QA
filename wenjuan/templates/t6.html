@@ -1,0 +1,63 @@
+{% load static %}
+<div class="t6" id="t6">
+                <div class="con_data">
+                    <p>倒计时:&nbsp<span class="time" id="time6">20</span></p>
+
+                    <p>第六题:</p>
+                    <p>请你找一找下列两幅图中共有多少处不同 。</p>
+                    <br>
+
+                    <div class="t_pic">
+                        <img class="pic_t6" src="{% static 'css/img/t6.jpg' %}">
+                    </div>
+                    <br>
+                    <br>
+
+
+                </div>
+
+</div>
+<div id="re_9a">
+
+</div>
+
+<script language="javascript" type="text/javascript">
+    var i = 20;
+    var intervalid;
+    intervalid = setInterval("fun()", 1000);
+    function fun() {
+    if (i == 0) {
+
+        $.post("/",
+          {
+            page_id:'9a'
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+              $("#t2").hide();
+              $("#t3s").hide();
+              $("#t3").hide();
+              $("#t4").hide();
+              $("#t5").hide();
+              $("#t6").hide();
+
+                {# 显示t1#}
+              $('#re_9a').html(data);
+
+
+          });
+
+        clearInterval(intervalid);
+
+    }
+    document.getElementById("time6").innerHTML = i;
+    i--;
+    }
+</script>
+
+

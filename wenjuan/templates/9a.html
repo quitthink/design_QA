@@ -1,0 +1,61 @@
+{% load static %}
+<div class="9a" id="9a">
+                <div class="con_data">
+
+                    <p>图中共有多少处不同？</p>
+
+                    <div class="result">
+                        <p><input class="input" placeholder="" type="text"></p>
+                    </div>
+
+                    <div id="line" class="line">
+
+                    </div>
+
+                    <div class="question">
+                        <p>按下>>完成答题。</p>
+                    </div>
+
+                    <div class="Buttons" id="Buttons9a">
+
+                        <input id="NextButton9a" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+                    </div>
+                </div>
+
+</div>
+
+
+<script>
+    $(document).ready(function(){
+      $("#NextButton9a").click(function(){
+          $.post("/",
+          {
+            page_id:'10'
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+              $("#t2").hide();
+              $("#4a").hide();
+              $("#t3s").hide();
+              $("#t3").hide();
+              $("#6a").hide();
+              $("#t4").hide();
+              $("#t5").hide();
+              $("#8a").hide();
+              $("#9a").hide();
+
+{#                显示t2#}
+              alert(data );
+              window.location.href = "/";
+
+          });
+        });
+
+    });
+</script>

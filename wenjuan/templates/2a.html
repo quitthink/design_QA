@@ -1,0 +1,59 @@
+{% load static %}
+<div class="2a" id="2a">
+                <div class="con_data">
+
+
+                    <p id="t1_con">表格中的数字中共有多少个8338？</p>
+
+                    <div class="result">
+                        <p><input class="input" placeholder="" type="text"></p>
+                    </div>
+
+                    <div id="line" class="line">
+
+                    </div>
+
+                    <div class="question">
+                        <p>按下>>进入下一题。</p>
+                    </div>
+
+                    <div class="Buttons" id="Buttons2a">
+
+                        <input id="NextButton2a" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+                    </div>
+
+                </div>
+
+</div>
+<div id="re_2">
+
+</div>
+
+<script>
+
+    $(document).ready(function(){
+      $("#NextButton2a").click(function(){
+          $.post("/",
+          {
+              page_id:'3'
+
+
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#2a").hide();
+
+{#                显示t1#}
+              $('#re_2').html(data);
+
+{#            alert("Data: " + data);#}
+          });
+        });
+
+    });
+</script>

@@ -1,0 +1,52 @@
+{% load static %}
+<div class="t3s" id="t3s">
+                <div class="con_data">
+                    <p>第三题:</p>
+                    <p>请数一数，下面表格中共有多少个指定的单词 。</p>
+                    <br>
+                    <p>示例：在下面的的表格中共有多少个 explain </p>
+
+                    <div class="t_pic">
+                    <img class="pic_t3s" src="{% static 'css/img/t3s.png' %}">
+                </div>
+                <div class="result">
+                    <p>答案：共<input class="input" placeholder="2" type="text">个</p>
+                </div>
+
+                <div class="Buttons" id="Buttons5">
+
+                        <input id="NextButton5" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+                </div>
+                </div>
+
+</div>
+<div id="re_5">
+
+</div>
+<script>
+    $(document).ready(function(){
+      $("#NextButton5").click(function(){
+          $.post("/",
+          {
+            page_id:'6'
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+              $("#t2").hide();
+              $("#t3s").hide();
+
+{#                显示t2#}
+              $('#re_5').html(data);
+
+{#            alert("Data: " + data);#}
+          });
+        });
+
+    });
+</script>

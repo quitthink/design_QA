@@ -1,0 +1,42 @@
+
+{% load static %}
+ <div id='view' class="intro">
+                <div class="con_data">
+                    <p>说明:</p>
+                    <p>本实验一共有五道题，第一道至第三道测试题之前将会有一道示例题，第四道至第六道没有示例。</p>
+
+                </div>
+                <div id="Buttons" class="Buttons">
+
+                        <input id="NextButton" class="NextButton Button" title=">>" name="NextButton" value=">>" type="button">
+
+                </div>
+            </div>
+ <div id="result" class="result">
+
+ </div>
+
+ <div id="result_2" class="result_2">
+
+ </div>
+
+ <script>
+    $(document).ready(function(){
+      $("#NextButton").click(function(){
+          $.post("/",
+          {
+            page_id:'1'
+
+          },
+          function(data){
+
+              $("#view").hide();
+
+              $('#result').html(data);
+
+{#            alert("Data: " + data);#}
+          });
+        });
+
+    });
+</script>

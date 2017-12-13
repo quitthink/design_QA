@@ -1,0 +1,52 @@
+{% load static %}
+
+<div id="t1s" class="t1s">
+                <div class="con_data">
+                            <p>第一题:</p>
+                            <p>请数一数，下面的数字中共有多少个 8338 。</p>
+                            <br>
+                            <p>示例:</p>
+
+                    <div class="t_pic">
+                    <img class="pic" src="{% static 'css/img/t1s.png' %}">
+                </div>
+
+                <div class="result">
+                    <p>答案：共<input class="input" placeholder="3" type="text">个</p>
+                </div>
+
+                <div class="Buttons" id="Buttons1">
+
+                        <input id="NextButton1" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+
+
+                </div>
+                </div>
+
+</div>
+<div id="re_1">
+
+</div>
+
+<script>
+    $(document).ready(function(){
+      $("#NextButton1").click(function(){
+          $.post("/",
+          {
+            page_id:'2'
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+{#                显示t1#}
+              $('#re_1').html(data);
+
+{#            alert("Data: " + data);#}
+          });
+        });
+
+    });
+</script>
