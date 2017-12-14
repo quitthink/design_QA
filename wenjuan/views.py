@@ -3,7 +3,7 @@ import xlrd
 # Create your views here.
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
-# from wenjuan.models import record_stu,question_list
+from wenjuan import models
 
 from django.http import HttpResponseRedirect
 
@@ -15,10 +15,25 @@ def index(request):
 
     if request.POST:
         page_id = request.POST['page_id']
+
         if page_id == '1':
-            return render(request, "t1s.html")
+            data=[]
+            row=[]
+            num = models.list_t1s.objects.all()
+
+            for j in range(2):
+                for i in range(0,3):
+                    row.append(num[i+j].t1s)
+                data.append(row)
+                row = []
+
+            return render(request, "t1s.html",{'data':data})
+
         if page_id == '2':
+            nu= request.POST.get('num')
+
             return render(request, "t1.html")
+
         if page_id == '2a':
             return render(request, "2a.html")
         if page_id == '3':
@@ -78,57 +93,64 @@ def login(request):
     else:
         return render(request, "login.html")
 
-# def read_excel(request):
-#     # 打开excel文件
-#     ExcelFile = xlrd.open_workbook('问卷.xlsx')
-#     # 获取表单
-#     for i in range(1,4):
-#
-#         sheet = ExcelFile.sheet_by_index(i)
-#         # 读取数据,列的数据
-#         ncols = sheet.ncols
-#
-#         # 读取数据,行的数据
-#         nrow=sheet.nrows
-#
-#         # if i==0:
-#         #
-#         #     for row in range(0, nrow):
-#         #         for cols in range(0, ncols):
-#         #             data = sheet.cell_value(row, cols)
-#         #             #写入数据库
-#         #             twz = question_list(t1s=data)
-#         #             twz.save()
-#         id = 461
-#         if i == 1:
-#             for row in range(0, nrow):
-#                 for cols in range(0, ncols):
-#                     data = sheet.cell_value(row, cols)
-#                     #写入数据库
-#
-#                     t=question_list.objects.filter(id=id)
-#                     t.update(t1=data)
-#                     id=id+1
-#
-#
-#         if i == 2:
-#             for row in range(0, nrow):
-#                 for cols in range(0, ncols):
-#                     data = sheet.cell_value(row, cols)
-#                     #写入数据库
-#                     t = question_list.objects.filter(id=id)
-#                     t.update(t1=data)
-#                     id = id + 1
-#
-#
-#         if i == 3:
-#             for row in range(0, nrow):
-#                 for cols in range(0, ncols):
-#                     data = sheet.cell_value(row, cols)
-#                     #写入数据库
-#                     t = question_list.objects.filter(id=id)
-#                     t.update(t1=data)
-#                     id = id + 1
-#
-#
-#     return  HttpResponse('完成')
+def read_excel(request):
+    # 打开excel文件
+    ExcelFile = xlrd.open_workbook('wenjuan.xlsx')
+    # 获取表单
+    #存储四个例子：
+    cop_t1s=[]
+    cop_t1 = []
+    cop_t3s = []
+    cop_t3 = []
+
+    for i in range(0,4):
+
+        sheet = ExcelFile.sheet_by_index(i)
+        # 读取数据,列的数据
+        ncols = sheet.ncols
+
+        # 读取数据,行的数据
+        nrow=sheet.nrows
+
+        if i==0:
+
+            for row in range(0, nrow):
+                for cols in range(0, ncols):
+                    data = sheet.cell_value(row, cols)
+                    # cop_t1s.append(data)
+                    #写入数据库
+                    twz = models.list_t1s(t1s=data)
+                    twz.save()
+
+        if i == 1:
+            for row in range(0, nrow):
+                for cols in range(0, ncols):
+                    data = sheet.cell_value(row, cols)
+                    #写入数据库
+                    # cop_t1.append(data)
+                    twz = models.list_t1(t1=data)
+                    twz.save()
+
+
+        if i == 2:
+            for row in range(0, nrow):
+                for cols in range(0, ncols):
+                    data = sheet.cell_value(row, cols)
+                    #写入数据库
+                    # cop_t3s.append(data)
+                    twz = models.list_t3s(t3s=data)
+                    twz.save()
+
+
+        if i == 3:
+            for row in range(0, nrow):
+                for cols in range(0, ncols):
+                    data = sheet.cell_value(row, cols)
+                    #写入数据库
+                    # cop_t3.append(data)
+                    twz = models.list_t3(t3=data)
+                    twz.save()
+
+
+
+    return  render(request,'test.html',{'t1s':cop_t1s,'t1':cop_t1,'t3s':cop_t3s,'t3':cop_t3})

@@ -2,42 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65de2a0f-6bd2-462f-a3f6-b62f6e41ee52" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/t1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/t1s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/t2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/t2s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/t3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/t3s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/t4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/t5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/img/t6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/admin.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/static/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/2a.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/4a.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/6a.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/7a.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/8a.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/9a.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/manage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/t0.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/t1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/t1s.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/t2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/t2s.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/t3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/t3s.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/t4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/t5.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/t6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/design_QA/settings.py" afterPath="$PROJECT_DIR$/design_QA/settings.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wenjuan/templates/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/design_QA/urls.py" afterPath="$PROJECT_DIR$/design_QA/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wenjuan/models.py" afterPath="$PROJECT_DIR$/wenjuan/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wenjuan/static/css/index.css" afterPath="$PROJECT_DIR$/wenjuan/static/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wenjuan/templates/t1.html" afterPath="$PROJECT_DIR$/wenjuan/templates/t1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wenjuan/templates/t1s.html" afterPath="$PROJECT_DIR$/wenjuan/templates/t1s.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wenjuan/views.py" afterPath="$PROJECT_DIR$/wenjuan/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,21 +28,71 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/design_QA/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="42" column="14" lean-forward="false" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+            <state relative-caret-position="380">
+              <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wenjuan/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="56" column="33" lean-forward="false" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+            <state relative-caret-position="327">
+              <caret line="32" column="39" lean-forward="false" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="t1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wenjuan/templates/t1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4">
+              <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="t1s.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wenjuan/templates/t1s.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1724">
+              <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wenjuan/templates/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wenjuan/static/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="154" column="15" lean-forward="true" selection-start-line="154" selection-start-column="15" selection-end-line="154" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wenjuan/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/design_QA/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
-              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+              <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="21" />
               <folding>
                 <element signature="e#633#665#0" expanded="true" />
               </folding>
@@ -90,28 +112,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wenjuan/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wenjuan/static/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="t0.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wenjuan/templates/t0.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            <state relative-caret-position="95">
+              <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -123,6 +125,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -133,11 +136,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/design_QA/settings.py" />
-        <option value="$PROJECT_DIR$/design_QA/urls.py" />
-        <option value="$PROJECT_DIR$/wenjuan/views.py" />
         <option value="$PROJECT_DIR$/wenjuan/templates/t0.html" />
         <option value="$PROJECT_DIR$/wenjuan/templates/index.html" />
+        <option value="$PROJECT_DIR$/design_QA/urls.py" />
+        <option value="$PROJECT_DIR$/wenjuan/models.py" />
         <option value="$PROJECT_DIR$/wenjuan/static/css/index.css" />
+        <option value="$PROJECT_DIR$/wenjuan/templates/t1.html" />
+        <option value="$PROJECT_DIR$/wenjuan/templates/test.html" />
+        <option value="$PROJECT_DIR$/wenjuan/templates/t1s.html" />
+        <option value="$PROJECT_DIR$/wenjuan/views.py" />
       </list>
     </option>
   </component>
@@ -260,6 +267,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistoryKey" value="setting&#9;ACTION&#9;Database.Settings" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -533,30 +541,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/design_QA/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="42" column="14" lean-forward="false" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wenjuan/templates/t1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wenjuan/templates/t0.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wenjuan/templates/manage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -573,39 +557,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wenjuan/views.py">
+    <entry file="file://$PROJECT_DIR$/wenjuan/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="56" column="33" lean-forward="false" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
-          <folding>
-            <element signature="e#1#12#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wenjuan/templates/t0.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/design_QA/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="21" />
           <folding>
             <element signature="e#633#665#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wenjuan/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wenjuan/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="95">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wenjuan/static/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        <state relative-caret-position="555">
+          <caret line="154" column="15" lean-forward="true" selection-start-line="154" selection-start-column="15" selection-end-line="154" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/design_QA/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wenjuan/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wenjuan/templates/t1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wenjuan/templates/t1s.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1724">
+          <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wenjuan/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="32" column="39" lean-forward="false" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+          <folding>
+            <element signature="e#1#12#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

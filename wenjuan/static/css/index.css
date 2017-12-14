@@ -1,3 +1,7 @@
+body {
+    font-size:18pt;
+}
+
 .head{
 
     margin-top: 80px;
@@ -114,5 +118,40 @@
 }
 .time{
     font-size: xx-large;
+    color: red;
+}
+.table_1{
+    border-spacing: 3px 10px;
+    width: 100% !important;
+}
+.t_body{
+    color: #43464D;
+    font-size: 16px;
+
+}
+.t_body td{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 80px;
+    text-align: center;
+    font-size:14pt;
+}
+.td_value{
+    background-color: #F1F1F1;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    width: 200px;
+    height: 60px;
+    line-height:60px;
+    cursor:pointer
+
+}
+.red {
+    background-color: #005790;
+    color: #ffffff;
+}
+.td_value_span{
     color: red;
 }
