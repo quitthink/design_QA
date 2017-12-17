@@ -3,7 +3,7 @@
 <div class="t1" id="t1">
     <div class="con_data">
 
-
+            <p>请点击下面数字中的 8338，限时30秒</p>
 
             <p>倒计时:&nbsp <span class="time" id="time1">30</span></p>
 
@@ -11,7 +11,35 @@
 
     <div class="t_pic">
 
-        <img class="pic_t1" src="{% static 'css/img/t1.png' %}">
+        <div class="span12">
+                            <table class="table_1">
+
+                                <tbody class="t_body">
+
+
+                                {% for i in data %}
+                                    <tr>
+                                        {% for j in i %}
+
+                                        <td>
+                                            <div id="td_value_t1" class="td_value_t1">
+
+                                                    <span>{{ j }}</span>
+
+
+                                            </div>
+
+                                        </td>
+                                        {% endfor %}
+                                    </tr>
+
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+
+
+		                </div>
     </div>
 
         <br>
@@ -27,12 +55,37 @@
     var i = 30;
     var intervalid;
     intervalid = setInterval("fun()", 1000);
+
+{#    $(document).ready(function(){#}
+
+        var nu = [];
+        var count=0;
+
+        $(".td_value_t1").click(function(){
+
+            $(this).toggleClass("red");
+
+        });
+
+
+
     function fun() {
     if (i == 0) {
 
-        $.post("/",
+        $(".red>span ").each(function () {
+                nu.push($(this).text());
+            });
+            $.each(nu,function(index,value){
+              if(value == 8338){
+                  count++;
+              }
+            });
+
+        $.post("/Merit/",
           {
-              page_id:'2a'
+              page_id:'3',
+              game1:count,
+              stu_id:{{ stu_num }}
 
 
 
@@ -54,6 +107,8 @@
     document.getElementById("time1").innerHTML = i;
     i--;
     }
+
+
 </script>
 
 {#<script>#}

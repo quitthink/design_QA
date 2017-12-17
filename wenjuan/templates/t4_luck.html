@@ -1,0 +1,62 @@
+{% load static %}
+<div class="t4" id="t4">
+
+
+
+                <div class="con_data">
+                    <p>第四个游戏</p>
+                    <p>请数一数，下图中共有多少个三角形？   限时20秒。</p>
+                    <p>倒计时:&nbsp<span class="time" id="time4">20</span></p>
+
+                    <br>
+                    <div class="t_pic">
+                        <img class="pic_t4" src="{% static 'css/img/t4.png' %}">
+                    </div>
+                    <br>
+                    <br>
+
+                </div>
+
+</div>
+<div id="re_7a">
+
+</div>
+
+<script language="javascript" type="text/javascript">
+    var i = 20;
+    var intervalid;
+    intervalid = setInterval("fun()", 1000);
+    function fun() {
+    if (i == 0) {
+
+        $.post("/Lucky/",
+          {
+              page_id:'7a',
+              stu_id:{{ stu_num }}
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+              $("#t2").hide();
+              $("#t3s").hide();
+              $("#t3").hide();
+              $("#t4").hide();
+
+                {# 显示t1#}
+              $('#re_7a').html(data);
+
+
+
+          });
+
+        clearInterval(intervalid);
+
+    }
+    document.getElementById("time4").innerHTML = i;
+    i--;
+    }
+</script>

@@ -1,10 +1,10 @@
 {% load static %}
 <div class="t6" id="t6">
                 <div class="con_data">
+                    <p>第六个游戏</p>
+                    <p>请你找一找，下列两幅图片中共有____处不同，限时20秒。</p>
                     <p>倒计时:&nbsp<span class="time" id="time6">20</span></p>
 
-                    <p>第六题:</p>
-                    <p>请你找一找下列两幅图中共有多少处不同 。</p>
                     <br>
 
                     <div class="t_pic">
@@ -28,9 +28,10 @@
     function fun() {
     if (i == 0) {
 
-        $.post("/",
+        $.post("/Merit/",
           {
-            page_id:'9a'
+              page_id:'9a',
+              stu_id:{{ stu_num }}
 
           },
           function(data){

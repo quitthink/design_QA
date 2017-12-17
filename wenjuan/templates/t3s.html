@@ -1,16 +1,47 @@
 {% load static %}
 <div class="t3s" id="t3s">
                 <div class="con_data">
-                    <p>第三题:</p>
-                    <p>请数一数，下面表格中共有多少个指定的单词 。</p>
+                    <p>第二个游戏</p>
+                    <p>请数一数下面表格中的英文单词：explain </p>
                     <br>
-                    <p>示例：在下面的的表格中共有多少个 explain </p>
+                    <p>示例 </p>
 
                     <div class="t_pic">
-                    <img class="pic_t3s" src="{% static 'css/img/t3s.png' %}">
-                </div>
-                <div class="result">
-                    <p>答案：共<input class="input" placeholder="2" type="text">个</p>
+
+                        <div class="span12">
+                            <table class="table_1">
+
+                                <tbody class="t_body">
+
+
+                                {% for i in data %}
+                                    <tr>
+                                        {% for j in i %}
+
+                                        <td>
+                                            <div id="td_value" class="td_value" style="width: 140px">
+                                                {% if j == 'explain' %}
+                                                    <span class="td_value_span">{{ j }}</span>
+                                                {% else %}
+                                                    <span>{{ j }}</span>
+                                                {% endif %}
+
+                                            </div>
+
+                                        </td>
+                                        {% endfor %}
+                                    </tr>
+
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+
+
+		                </div>
+
+
+
                 </div>
 
                 <div class="Buttons" id="Buttons5">
@@ -26,10 +57,18 @@
 </div>
 <script>
     $(document).ready(function(){
+
+        $(".td_value").click(function(){
+
+            $(this).toggleClass("red");
+
+        });
+
       $("#NextButton5").click(function(){
-          $.post("/",
+          $.post("/Merit/",
           {
-            page_id:'6'
+              page_id:'4',
+              stu_id:{{ stu_num }}
 
           },
           function(data){

@@ -1,0 +1,96 @@
+{% load static %}
+<div class="dire" id="dire">
+                <div class="con_data">
+
+                    <p>第一次  分配决定</p>
+
+                    <p>
+                        刚才大家一起完成了小游戏，现在需要两两随机配对，你与另一位同学配成了一对，你俩通过游戏一共赚得了24元，现在请你决定如何分配这些钱。你想怎么分就怎么分。
+                    </p>
+
+                    <div class="result">
+
+
+                        <p><span>分配给自己的钱：</span><input id="dire_s" class="input" placeholder="" type="text"></p>
+                        <p><span>分配给另一个同学的钱：</span><input id="dire_a" class="input" placeholder="" type="text"></p>
+                    </div>
+
+
+
+                    <div class="question">
+                        <p>按下>>进入下一个决定。</p>
+                    </div>
+
+                    <div class="Buttons" id="button_dire">
+
+                        <input id="button_dire" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+                    </div>
+                </div>
+
+</div>
+<div id="re_12">
+
+</div>
+
+<script>
+    $(document).ready(function(){
+      $("#button_dire").click(function(){
+
+          var SH_self_m = $(" #dire_s ").val();
+          var SH_allot_stu_m = $(" #dire_a ").val();
+
+          if (SH_self_m === "" || SH_allot_stu_m === ""){
+
+                alert('请输入数字')
+            }
+          else {
+              var reg = /^[0-9]*$/;
+
+          if(!reg.test(SH_self_m)||!reg.test(SH_allot_stu_m)){
+
+               alert("必须输入为数字");
+           }
+           else {
+              $.post("/Efficiency/",
+          {
+              page_id:'12',
+              SH_self_m :SH_self_m,
+              SH_allot_stu_m:SH_allot_stu_m,
+              stu_id:{{ stu_num }}
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+              $("#t2").hide();
+              $("#4a").hide();
+              $("#t3s").hide();
+              $("#t3").hide();
+              $("#6a").hide();
+              $("#t4").hide();
+              $("#t5").hide();
+              $("#8a").hide();
+              $("#9a").hide();
+              $("#pass").hide();
+              $("#dire").hide();
+
+{#                显示t2#}
+              $('#re_12').html(data);
+
+          });
+          }
+
+          }
+
+
+
+
+
+        });
+
+    });
+</script>

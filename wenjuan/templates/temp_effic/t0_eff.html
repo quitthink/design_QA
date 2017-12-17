@@ -1,0 +1,129 @@
+
+{% load static %}
+ <div id='view' class="intro">
+                <div class="con_data">
+
+                    <p>你好，下面一共有六个小游戏，请在规定时间内完成。</p>
+
+                </div>
+                <div style="width: 300px;text-align: center;margin-left: 30%;">
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">姓名</span>
+                      <input id="name" type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon2">学号</span>
+                      <input id="stu_id" type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon3">班级代码</span>
+                        &nbsp;
+                            &nbsp;
+                        &nbsp;
+                        &nbsp;
+                      <label class="radio-inline">
+                            <input type="radio" name="Radiosinline" id="Radios1" value="1" disabled> 1
+                        </label>
+                        &nbsp;
+                            &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <label class="radio-inline">
+                            <input type="radio" name="Radiosinline" id="Radios1" value="2" disabled> 2
+                        </label>
+                        &nbsp;
+                            &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <label class="radio-inline">
+                            <input type="radio" name="Radiosinline" id="Radios1" value="3" checked="checked" disabled> 3
+                        </label>
+
+                    </div>
+
+                    <br>
+                    <div class="input-group" style="font-size: 13pt">
+                      <span class="input-group-addon" id="basic-addon4">性别</span>
+                        <div style="margin-left: 10%">
+                       <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios1" value="1" checked> 男
+                        </label>
+                            &nbsp;
+                            &nbsp;
+                        <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios2"  value="2"> 女
+                        </label>
+                            </div>
+                    </div>
+                </div>
+
+                <div id="Buttons" class="Buttons">
+
+                        <input id="NextButton" class="NextButton Button" title=">>" name="NextButton" value=">>" type="button">
+
+                </div>
+            </div>
+ <div id="result" class="result">
+
+ </div>
+
+ <div id="result_2" class="result_2">
+
+ </div>
+
+ <script>
+    $(document).ready(function(){
+
+      $("#NextButton").click(function(){
+
+          var name = $(" #name ").val();
+          var stu_id = $(" #stu_id ").val();
+          var stu_class = $("input[name='Radiosinline']:checked").val();
+          var stu_sex = $("input[name='optionsRadiosinline']:checked").val();
+          if (stu_id === ""){
+
+                alert('学号不能为空')
+            }
+          else {
+
+              var reg = /^[0-9]*$/;
+
+
+          if(!reg.test(stu_id)){
+
+               alert("姓名不能为空，学号必须为数字");
+           }
+           else {
+
+              $.post("/Efficiency/",
+          {
+              page_id:'1',
+              name:name,
+              stu_id:stu_id,
+              stu_class:stu_class,
+              stu_sex:stu_sex
+
+          },
+          function(data){
+
+              $("#view").hide();
+
+              $('#result').html(data);
+
+{#            alert("Data: " + stu_class);#}
+          });
+
+          }
+          }
+
+
+
+
+
+
+        });
+
+    });
+</script>

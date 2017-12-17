@@ -4,9 +4,10 @@
 
 
                 <div class="con_data">
+                    <p>第四个游戏</p>
+                    <p>请数一数，下图中共有多少个三角形？   限时20秒。</p>
                     <p>倒计时:&nbsp<span class="time" id="time4">20</span></p>
-                    <p>第四题:</p>
-                    <p>请数一数，下图中共有多少个三角形 。</p>
+
                     <br>
                     <div class="t_pic">
                         <img class="pic_t4" src="{% static 'css/img/t4.png' %}">
@@ -28,9 +29,10 @@
     function fun() {
     if (i == 0) {
 
-        $.post("/",
+        $.post("/Merit/",
           {
-            page_id:'7a'
+              page_id:'7a',
+              stu_id:{{ stu_num }}
 
           },
           function(data){

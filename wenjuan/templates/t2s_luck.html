@@ -1,0 +1,52 @@
+{% load static %}
+<div class="t2s" id="t2s">
+                <div class="con_data">
+                    <p>第三个游戏</p>
+                    <p>请数一数下面表格中的黑色格子 。</p>
+                    <br>
+                    <p>示例</p>
+                <div class="t_pic">
+                    <img class="pic_t2s" src="{% static 'css/img/t2s.png' %}">
+                </div>
+                    <div class="result">
+                        <p>答案：共<input class="input" placeholder="4" type="text" disabled>个</p>
+                    </div>
+
+                    <div class="Buttons" id="Buttons3">
+
+                        <input id="NextButton3" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+                    </div>
+                </div>
+
+
+</div>
+<div id="re_3">
+
+</div>
+
+<script>
+    $(document).ready(function(){
+      $("#NextButton3").click(function(){
+          $.post("/Lucky/",
+          {
+              page_id:'6',
+              stu_id:{{ stu_num }}
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+{#                显示t2#}
+              $('#re_3').html(data);
+
+{#            alert("Data: " + data);#}
+          });
+        });
+
+    });
+</script>
+

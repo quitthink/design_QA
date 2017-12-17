@@ -1,0 +1,69 @@
+{% load static %}
+<div class="pass" id="pass">
+                <div class="con_data">
+
+                    <p>谢谢你参加了6个小游戏。</p>
+
+                   <br>
+                    <p>请先暂停，等待老师指令</p>
+                    <div class="t_pic">
+                        <img class="pic_t2s" src="{% static 'css/img/pass.png' %}">
+                    </div>
+
+                    <div id="line" class="line">
+
+                    </div>
+
+                    <div class="question">
+                        <p>现在，继续点击右下角的>>。请你仔细阅读指导语，做出两个决定。</p>
+                    </div>
+
+                    <div class="Buttons" id="Buttons_pass">
+
+                        <input id="NextButton_pass" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+                    </div>
+                </div>
+
+</div>
+<div id="re_11">
+
+</div>
+
+<script>
+    $(document).ready(function(){
+      $("#NextButton_pass").click(function(){
+
+
+          $.post("/Merit/",
+          {
+              page_id:'11',
+
+              stu_id:{{ stu_num }}
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+              $("#t2").hide();
+              $("#4a").hide();
+              $("#t3s").hide();
+              $("#t3").hide();
+              $("#6a").hide();
+              $("#t4").hide();
+              $("#t5").hide();
+              $("#8a").hide();
+              $("#9a").hide();
+              $("#pass").hide();
+
+{#                显示t2#}
+              $('#re_11').html(data);
+
+          });
+        });
+
+    });
+</script>

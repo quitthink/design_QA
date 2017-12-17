@@ -1,0 +1,91 @@
+{% load static %}
+<div class="t3s" id="t3s">
+                <div class="con_data">
+                    <p>第二个游戏</p>
+                    <p>请数一数下面表格中的英文单词：explain </p>
+                    <br>
+                    <p>示例 </p>
+
+                    <div class="t_pic">
+
+                        <div class="span12">
+                            <table class="table_1">
+
+                                <tbody class="t_body">
+
+
+                                {% for i in data %}
+                                    <tr>
+                                        {% for j in i %}
+
+                                        <td>
+                                            <div id="td_value" class="td_value" style="width: 140px">
+                                                {% if j == 'explain' %}
+                                                    <span class="td_value_span">{{ j }}</span>
+                                                {% else %}
+                                                    <span>{{ j }}</span>
+                                                {% endif %}
+
+                                            </div>
+
+                                        </td>
+                                        {% endfor %}
+                                    </tr>
+
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+
+
+		                </div>
+
+
+
+                </div>
+
+                <div class="Buttons" id="Buttons5">
+
+                        <input id="NextButton5" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+                </div>
+                </div>
+
+</div>
+<div id="re_5">
+
+</div>
+<script>
+    $(document).ready(function(){
+
+        $(".td_value").click(function(){
+
+            $(this).toggleClass("red");
+
+        });
+
+      $("#NextButton5").click(function(){
+          $.post("/Lucky/",
+          {
+              page_id:'4',
+              stu_id:{{ stu_num }}
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+              $("#t2").hide();
+              $("#t3s").hide();
+
+{#                显示t2#}
+              $('#re_5').html(data);
+
+{#            alert("Data: " + data);#}
+          });
+        });
+
+    });
+</script>

@@ -2,11 +2,41 @@
 
 
 <div class="t3" id="t3">
+
                 <div class="con_data">
+                    <p>请数一数下面表格中的英文单词：explain，限时60秒</p>
                     <p>倒计时:&nbsp<span class="time" id="time3">60</span></p>
 
                 <div class="t_pic">
-                    <img class="pic_t3" src="{% static 'css/img/t3.png' %}">
+                    <div class="span12">
+                            <table class="table_1">
+
+                                <tbody class="t_body">
+
+
+                                {% for i in data %}
+                                    <tr>
+                                        {% for j in i %}
+
+                                        <td>
+                                            <div id="td_value_t1" class="td_value_t1" style="width: 100px">
+
+                                                    <span>{{ j }}</span>
+
+
+                                            </div>
+
+                                        </td>
+                                        {% endfor %}
+                                    </tr>
+
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+
+
+		                </div>
                 </div>
                 <br>
                     <br>
@@ -21,12 +51,33 @@
     var i = 60;
     var intervalid;
     intervalid = setInterval("fun()", 1000);
+    var nu = [];
+    var count=0;
+
+    $(".td_value_t1").click(function(){
+
+            $(this).toggleClass("red");
+
+        });
+
     function fun() {
     if (i == 0) {
 
-        $.post("/",
+        $(".red>span ").each(function () {
+                nu.push($(this).text());
+            });
+            $.each(nu,function(index,value){
+              if(value == 'explain'){
+                  count++;
+              }
+            });
+
+
+        $.post("/Merit/",
           {
-            page_id:'6a'
+              page_id:'5',
+              game2:count,
+              stu_id:{{ stu_num }}
 
           },
           function(data){

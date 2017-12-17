@@ -1,22 +1,145 @@
 <!DOCTYPE html>
-<html>
-<head>
-<script src="js/jquery.min.js">
-</script>
-<script>
-$(document).ready(function(){
- $("#btn1").click(function(){
-  alert("Text: " + $("#test").text());
- });
- $("#btn2").click(function(){
-  alert("HTML: " + $("#test").html());
- });
-});
-</script>
-</head>
+<html lang="en">
+    <meta charset="UTF-8">
+{% load static %}
+ <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet">
+ <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+ <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+ <link href="{% static 'css/index.css' %}" rel="stylesheet">
 <body>
-<p id="test">This is some <b>bold</b> text in a paragraph.</p>
-<button id="btn1">Show Text</button>
-<button id="btn2">Show HTML</button>
+
+<div class="head">
+
+
+</div>
+ <div class="content">
+        <div class="log_title">
+            <div id="logo">
+                <img  class="img" src="{% static 'css/img/logo.jpg' %}">
+            </div>
+        </div>
+
+       {% load static %}
+<div class="merit" id="merit">
+                <div class="con_data">
+
+                    <p>第二次 分配决定</p>
+
+                    <p>
+                        另外两个同学（A和B）也完成了同样的游戏，通过游戏一共挣得了24元，其中一个同学A表现得更<strong>突出</strong>，获得了24元的奖励另一个同学B<strong>表现不佳</strong>没有获得奖励。两个同学A和B并不知道他们两人谁完成得更好。
+                    </p>
+
+                    <div class="result">
+                        <p>你是一个<strong>旁观者</strong>，有权在两个同学之间重新进行分配，请你从以下选项中选择一种分配方式：</p>
+
+
+                        <div>
+                            <p>我不再重新分配：</p>
+                            <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios1" value="1" checked> 同学A获得<span id="ma" style="color: red">24</span> 元，同学B获得<span id="mb" style="color: red">0</span>元。
+                        </label>
+
+                            <p>我会重新分配：</p>
+
+                            <label class="radio-inline">
+                                <input type="radio" name="optionsRadiosinline" id="optionsRadios2"  value="2"> 给同学（A）<span id="ma" style="color: red">20</span>元，同学（B）<span id="mb" style="color: red">4</span>元
+                            </label>
+                            <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios3"  value="3"> 给同学（A）<span id="ma" style="color: red">16</span>元，同学（B）<span id="mb" style="color: red">8</span>元
+                            </label>
+                            <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="4"> 给同学（A）<span id="ma" style="color: red">12</span>元，同学（B）<span id="mb" style="color: red">12</span>元
+                        </label>
+                            <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios5"  value="5"> 给同学（A）<span id="ma" style="color: red">8</span>元，同学（B）<span id="mb" style="color: red">16</span>元
+                        </label>
+                            <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios6"  value="6"> 给同学（A）<span id="ma" style="color: red">4</span>元，同学（B）<span id="mb" style="color: red">20</span>元
+                        </label>
+                            <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios7"  value="7"> 给同学（A）<span id="ma" style="color: red">0</span>元，同学（B）<span id="mb" style="color: red">24</span>元
+                        </label>
+
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="question">
+                        <p>按下>>完成游戏。</p>
+                    </div>
+
+                    <div class="Buttons" id="button_merit">
+
+                        <input id="button_merit" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+                    </div>
+                </div>
+
+</div>
+
+<div id="re_13">
+
+</div>
+
+<script>
+    $(document).ready(function(){
+
+
+      $("#button_merit").click(function(){
+
+            var M_allot = $("input[type='radio']:checked").val();
+
+
+
+          $.post("/Merit/",
+          {
+              page_id:'13',
+
+              mm:M_allot
+
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+              $("#t2").hide();
+              $("#4a").hide();
+              $("#t3s").hide();
+              $("#t3").hide();
+              $("#6a").hide();
+              $("#t4").hide();
+              $("#t5").hide();
+              $("#8a").hide();
+              $("#9a").hide();
+              $("#pass").hide();
+              $("#dire").hide();
+              $("#merit").hide();
+
+{#                显示t2#}
+              $('#re_13').html(data);
+
+          });
+        });
+
+    });
+</script>
+
+ </div>
+
+
+
+
 </body>
 </html>
+

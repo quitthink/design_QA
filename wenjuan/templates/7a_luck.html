@@ -1,0 +1,80 @@
+{% load static %}
+<div class="7a" id="7a">
+                <div class="con_data">
+
+                    <p>表格中共有多少个三角形？</p>
+
+                    <div class="result">
+                        <p><input id="t4_re" class="input" placeholder="" type="text"></p>
+                    </div>
+
+                    <div id="line" class="line">
+
+                    </div>
+
+                    <div class="question">
+                        <p>按下>>进入下一个游戏。</p>
+                    </div>
+
+                    <div class="Buttons" id="Buttons7a">
+
+                        <input id="NextButton7a" class="NextButton Button" title=">>" name="NextButton" value=">>" data-runtime-disabled="runtime.Disabled" data-runtime-aria-label="runtime.ariaLabel" data-runtime-hide="runtime.Hide" page-id="P_1512964020388" aria-label="Next" type="button">
+
+                    </div>
+                </div>
+
+</div>
+<div id="re_7">
+
+</div>
+
+
+
+<script>
+    $(document).ready(function(){
+      $("#NextButton7a").click(function(){
+          var game4 = $(" #t4_re ").val();
+          if (game4 === ""){
+
+                alert('请输入数字')
+            }
+          else {
+              var reg = /^[0-9]*$/;
+
+          if(!reg.test(game4)){
+
+               alert("必须输入为数字");
+           }
+            else {
+
+          $.post("/Lucky/",
+          {
+              page_id:'8',
+              game4:game4,
+              stu_id:{{ stu_num }}
+
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+              $("#t1").hide();
+              $("#t2s").hide();
+              $("#t2").hide();
+              $("#4a").hide();
+              $("#t3s").hide();
+              $("#t3").hide();
+              $("#6a").hide();
+              $("#7a").hide();
+{#                显示t2#}
+              $('#re_7').html(data);
+
+          });
+          }
+
+          }
+
+        });
+
+    });
+</script>

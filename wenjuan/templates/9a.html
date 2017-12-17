@@ -5,7 +5,7 @@
                     <p>图中共有多少处不同？</p>
 
                     <div class="result">
-                        <p><input class="input" placeholder="" type="text"></p>
+                        <p><input id="t6_re" class="input" placeholder="" type="text"></p>
                     </div>
 
                     <div id="line" class="line">
@@ -13,7 +13,7 @@
                     </div>
 
                     <div class="question">
-                        <p>按下>>完成答题。</p>
+                        <p>按下>>完成游戏。</p>
                     </div>
 
                     <div class="Buttons" id="Buttons9a">
@@ -24,14 +24,31 @@
                 </div>
 
 </div>
+<div id="re_10">
 
+</div>
 
 <script>
     $(document).ready(function(){
       $("#NextButton9a").click(function(){
-          $.post("/",
+          var game6 = $(" #t6_re ").val();
+          if (game6 === ""){
+
+                alert('请输入数字')
+            }
+          else {
+              var reg = /^[0-9]*$/;
+
+          if(!reg.test(game6)){
+
+               alert("必须输入为数字");
+           }
+           else {
+              $.post("/Merit/",
           {
-            page_id:'10'
+            page_id:'10',
+              game6:game6,
+              stu_id:{{ stu_num }}
 
           },
           function(data){
@@ -50,11 +67,15 @@
               $("#8a").hide();
               $("#9a").hide();
 
-{#                显示t2#}
-              alert(data );
-              window.location.href = "/";
+{#                显示过渡业的内容#}
+
+              $('#re_10').html(data);
 
           });
+          }
+          }
+
+
         });
 
     });

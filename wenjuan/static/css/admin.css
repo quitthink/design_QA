@@ -1,4 +1,4 @@
-.btn{
+#download{
     position: absolute;
     float: left;
     right: 10px;
@@ -6,4 +6,13 @@
 }
 .font{
     font-size: x-large;
+}
+.tr_td th{
+  width: 90px;
+}
+#refresh{
+    position: absolute;
+    float: left;
+    left: 10px;
+    top: -2px;
 }

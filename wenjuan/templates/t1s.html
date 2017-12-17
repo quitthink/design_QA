@@ -2,44 +2,44 @@
 
 <div id="t1s" class="t1s">
                 <div class="con_data">
-                            <p>第一题:</p>
-                            <p>请数一数，下面的数字中共有多少个 8338 。</p>
+                            <p>第一个游戏</p>
+                            <p>请点击下面数字中的8338</p>
                             <br>
                             <p>示例:</p>
 
                     <div class="t_pic">
 
-                            <div class="span12">
-			<table class="table_1">
+                        <div class="span12">
+                            <table class="table_1">
 
-				<tbody class="t_body">
-
-
-                {% for i in data %}
-					<tr>
-                        {% for j in i %}
-
-						<td>
-                            <div id="td_value" class="td_value">
-                                {% if j == '8338' %}
-                                    <span class="td_value_span">{{ j }}</span>
-                                {% else %}
-                                    <span>{{ j }}</span>
-                                {% endif %}
-
-                            </div>
-
-						</td>
-                        {% endfor %}
-					</tr>
-
-                {% endfor %}
-
-				</tbody>
-			</table>
+                                <tbody class="t_body">
 
 
-		</div>
+                                {% for i in data %}
+                                    <tr>
+                                        {% for j in i %}
+
+                                        <td>
+                                            <div id="td_value" class="td_value">
+                                                {% if j == '8338' %}
+                                                    <span class="td_value_span">{{ j }}</span>
+                                                {% else %}
+                                                    <span>{{ j }}</span>
+                                                {% endif %}
+
+                                            </div>
+
+                                        </td>
+                                        {% endfor %}
+                                    </tr>
+
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+
+
+		                </div>
 
 
 
@@ -47,9 +47,8 @@
 
                     </div>
 
-                <div class="result">
-                    <p>答案：共<input class="input" placeholder="4" type="text">个</p>
-                </div>
+                <br>
+
 
                 <div class="Buttons" id="Buttons1">
 
@@ -77,37 +76,25 @@
 
         });
 
-
-
         $("#NextButton1").click(function(){
+          $.post("/Merit/",
+          {
+              page_id:'2',
+              stu_id:{{ stu_num }}
 
-            $(".red>.td_value_span ").each(function () {
-                nu.push($(this).text());
-            });
-            $.each(nu,function(index,value){
-              if(value == 8338){
-                  count++;
-              }
-            });
+          },
+          function(data){
+
+              $("#view").hide();
+              $("#t1s").hide();
+
+              $('#re_1').html(data);
+
+{#            alert("Data: " );#}
+          });
 
 
-              $.post("/",
-              {
-                page_id:'2',
-                num: count
-
-              },
-              function(data){
-
-                  $("#view").hide();
-                  $("#t1s").hide();
-    {#                显示t1#}
-                  $('#re_1').html(data);
-
-    {#            alert("Data: " + data);#}
-              });
-            });
-
+        });
     });
 
 </script>

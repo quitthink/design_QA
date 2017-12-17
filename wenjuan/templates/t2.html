@@ -1,6 +1,7 @@
 {% load static %}
 <div class="t2" id="t2">
     <div class="con_data">
+        <p>请数一数下面表格中的黑色格子，限时60秒</p>
         <p>倒计时:&nbsp<span class="time" id="time2">60</span></p>
 
 
@@ -25,9 +26,12 @@
     function fun() {
     if (i == 0) {
 
-        $.post("/",
+
+
+        $.post("/Merit/",
           {
-            page_id:'4a'
+              page_id:'6a',
+              stu_id:{{ stu_num }}
 
           },
           function(data){

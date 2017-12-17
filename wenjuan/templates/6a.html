@@ -5,7 +5,7 @@
                     <p>表格中共有多少个 explain？</p>
 
                     <div class="result">
-                        <p><input class="input" placeholder="" type="text"></p>
+                        <p><input  id="t2_re" class="input" placeholder="" type="text"></p>
                     </div>
 
                     <div id="line" class="line">
@@ -13,7 +13,7 @@
                     </div>
 
                     <div class="question">
-                        <p>按下>>进入下一题。</p>
+                        <p>按下>>进入下一个游戏。</p>
                     </div>
 
                     <div class="Buttons" id="Buttons6a">
@@ -33,9 +33,20 @@
 <script>
     $(document).ready(function(){
       $("#NextButton6a").click(function(){
-          $.post("/",
+          var game2 = $(" #t2_re ").val();
+          var reg = /^[0-9]*$/;
+
+          if(!reg.test(game2)){
+
+               alert("必须输入为数字");
+           }
+            else {
+
+              $.post("/Merit/",
           {
-            page_id:'7'
+              page_id:'5',
+              game2:game2,
+              stu_id:{{ stu_num }}
 
           },
           function(data){
@@ -53,6 +64,8 @@
               $('#re_6').html(data);
 
           });
+          }
+
         });
 
     });

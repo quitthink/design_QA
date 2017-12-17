@@ -21,76 +21,226 @@
 			<nav class="navbar navbar-default">
               <div class="container-fluid">
                 <div class="navbar-header">
+                    <button type="button" id="refresh" class="btn btn-default navbar-btn">刷新</button>
                   <div class="font">
-                      <span>后台管理</span>
+                      <span>后台统计</span>
                   </div>
-                    <button type="button" class="btn btn-default navbar-btn">导出EXCEL</button>
+                    <button type="button" id="download" class="btn btn-default navbar-btn">导出EXCEL</button>
                 </div>
               </div>
 
             </nav>
+        <div style="color: red;font-size: x-large">
+            <span>完成六个游戏的人数实时统计：</span>
+            &nbsp;
+            <span>班级1(Merit):{{ class_1 }}</span>
+            &nbsp;
+            <span>班级2(Lucky):{{ class_2 }}</span>
+            &nbsp;
+            <span>班级3(Efficiency):{{ class_3 }}</span>
+
+        </div>
+        <div style="overflow: scroll">
 			<table class="table">
 				<thead>
-					<tr>
+					<tr  class="tr_td">
 						<th>
-							学生id
+							姓名
 						</th>
 						<th>
-							题号
+							学号
 						</th>
 						<th>
-							题目内容
+							性别
 						</th>
 						<th>
-							正确答案
+							班级
 						</th>
 
 
                         <th>
-							学生答案
+							游戏1
 						</th>
-                        <th>
-							答题成绩
+                         <th>
+							游戏2
 						</th>
-                        <th>
-							答题时间
+                         <th>
+							游戏3
+						</th>
+                         <th>
+							游戏4
+						</th>
+                         <th>
+							游戏5
+						</th>
+                         <th>
+							游戏6
 						</th>
 
+
+                         <th>
+							D（自己钱数）
+						</th>
+                         <th>
+							D（他人学号）
+						</th>
+                        <th>
+							D（他人钱数）
+						</th>
+
+
+                        <th>
+							M（A1学号）
+						</th>
+                         <th>
+							M（A1钱数）
+						</th>
+                        <th>
+							M（B1学号）
+						</th>
+                         <th>
+							M（B1钱数）
+						</th>
+
+                        <th>
+							L（A2学号）
+						</th>
+                         <th>
+							L（A2钱数）
+						</th>
+                        <th>
+							L（B2学号）
+						</th>
+                         <th>
+							L（B2钱数）
+						</th>
+
+                        <th>
+							E（A3学号）
+						</th>
+                         <th>
+							E（A3钱数）
+						</th>
+                        <th>
+							E（B3学号）
+						</th>
+                         <th>
+							E（B3钱数）
+						</th>
 
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>
-							1
-						</td>
-						<td>
-							TB
-						</td>
-						<td>
-							01
-						</td>
-						<td>
-							Default
-						</td>
-                        <td>
-							Default
-						</td>
-                        <td>
-							Default
-						</td>
-                        <td>
-							Default
-						</td>
+                    {% for line in record %}
+                        <tr>
+                                <td>
+                                    {{ line.stu_name }}
+                                </td>
+                                <td>
+                                    {{ line.stu_num }}
+                                </td>
+                                <td>
+                                    {{ line.stu_sex }}
+                                </td>
+                                <td>
+                                    {{ line.stu_class }}
+                                </td>
+                                <td>
+                                    {{ line.game1 }}
+                                </td>
+                                <td>
+                                    {{ line.game2 }}
+                                </td>
+                                <td>
+                                    {{ line.game3 }}
+                                </td>
+                                <td>
+                                    {{ line.game4 }}
+                                </td>
+                                <td>
+                                    {{ line.game5 }}
+                                </td>
+                                <td>
+                                    {{ line.SH_self_m }}
+                                </td>
+                                <td>
+                                    {{ line.SH_allot_stu_a }}
+                                </td>
+                                <td>
+                                    {{ line.SH_allot_stu_a_m }}
+                                </td>
+                                <td>
+                                    {{ line.M_allot_stu_a }}
+                                </td>
+                                <td>
+                                    {{ line.M_allot_stu_a_m }}
+                                </td>
+                                <td>
+                                    {{ line.M_allot_stu_b }}
+                                </td>
+                                <td>
+                                    {{ line.M_allot_stu_b_m }}
+                                </td>
+                                <td>
+                                    {{ line.L_allot_stu_a }}
+                                </td>
+                                <td>
+                                    {{ line.L_allot_stu_a_m }}
+                                </td>
+                                <td>
+                                    {{ line.L_allot_stu_b }}
+                                </td>
+                                <td>
+                                    {{ line.L_allot_stu_b_m }}
+                                </td>
+                                <td>
+                                    {{ line.E_allot_stu_a}}
+                                </td>
+                                <td>
+                                    {{ line.E_allot_stu_a_m }}
+                                </td>
+                                <td>
+                                    {{ line.E_allot_stu_b }}
+                                </td>
+                                <td>
+                                    {{ line.E_allot_stu_b_m }}
+                                </td>
 
-					</tr>
+
+
+
+
+					    </tr>
+                    {% endfor %}
+
+
 
 
 
 				</tbody>
 			</table>
+
+        </div>
 		</div>
 	</div>
 </div>
+<script>
+
+    $(document).ready(function(){
+
+
+      $("#download").click(function(){
+
+          location.href="/download";
+
+        });
+      $("#refresh").click(function(){
+
+          location.href="/manage";
+
+        });
+
+    });
+</script>
 </body>
 </html>

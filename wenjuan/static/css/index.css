@@ -148,6 +148,17 @@ body {
     cursor:pointer
 
 }
+.td_value_t1{
+    background-color: #F1F1F1;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    width: 100px;
+    height: 60px;
+    line-height:60px;
+    cursor:pointer
+
+}
 .red {
     background-color: #005790;
     color: #ffffff;
@@ -155,3 +166,4 @@ body {
 .td_value_span{
     color: red;
 }
+

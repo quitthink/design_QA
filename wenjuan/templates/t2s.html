@@ -1,15 +1,15 @@
 {% load static %}
 <div class="t2s" id="t2s">
                 <div class="con_data">
-                    <p>第二题:</p>
-                    <p>请数一数，下列表格中共有多少个黑色的格子 。</p>
+                    <p>第三个游戏</p>
+                    <p>请数一数下面表格中的黑色格子 。</p>
                     <br>
                     <p>示例</p>
                 <div class="t_pic">
                     <img class="pic_t2s" src="{% static 'css/img/t2s.png' %}">
                 </div>
                     <div class="result">
-                        <p>答案：共<input class="input" placeholder="4" type="text">个</p>
+                        <p>答案：共<input class="input" placeholder="4" type="text" disabled>个</p>
                     </div>
 
                     <div class="Buttons" id="Buttons3">
@@ -28,9 +28,10 @@
 <script>
     $(document).ready(function(){
       $("#NextButton3").click(function(){
-          $.post("/",
+          $.post("/Merit/",
           {
-            page_id:'4'
+              page_id:'6',
+              stu_id:{{ stu_num }}
 
           },
           function(data){
